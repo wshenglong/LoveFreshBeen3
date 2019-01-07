@@ -6,7 +6,7 @@
 //  Copyright © 2016年 tianzhongtao. All rights reserved.
 //  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
 //  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+//  泛型资料 https://www.bbsmax.com/A/kvJ3eqWAdg/
 
 import UIKit
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
@@ -64,7 +64,7 @@ class HomeViewController: SelectedAdressViewController {
         
         buildTableHeadView()
         
-        buildProessHud()
+        buildProessHud()//提示模块
     }
     
     override func viewWillAppear(_ animated: Bool) {

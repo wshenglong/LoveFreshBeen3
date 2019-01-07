@@ -39,7 +39,7 @@ class RAMBounceAnimation : RAMItemAnimation {
     }
     
     func playBounceAnimation(_ icon : UIImageView) {
-        
+        //动画
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
         bounceAnimation.duration = TimeInterval(duration)
@@ -63,12 +63,14 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     
     var textColor = UIColor.gray
     
+    //闭包
     func playAnimation(_ icon: UIImageView, textLabel: UILabel){
         guard let animation = animation else {
             print("add animation in UITabBarItem")
             return
         }
         animation.playAnimation(icon, textLabel: textLabel)
+        // RAMItemAnimation.playAnimation
     }
     
     func deselectAnimation(_ icon: UIImageView, textLabel: UILabel) {
@@ -138,7 +140,7 @@ class AnimationTabBarController: UITabBarController {
         {
             return containersDict
         }
-        
+        print(customItems)
         for index in 0..<customItems.count {
             let viewContainer = createViewContainer(index)
             containersDict["container\(index)"] = viewContainer
@@ -148,19 +150,19 @@ class AnimationTabBarController: UITabBarController {
     }
     
     func createViewContainer(_ index: Int) -> UIView {
-        
+        // 建立容器视图位置
         let viewWidth: CGFloat = ScreenWidth / CGFloat(tabBar.items!.count)
         let viewHeight: CGFloat = tabBar.bounds.size.height
         
         let viewContainer = UIView(frame: CGRect(x: viewWidth * CGFloat(index), y: 0, width: viewWidth, height: viewHeight))
         
         viewContainer.backgroundColor = UIColor.clear
-        viewContainer.isUserInteractionEnabled = true
+        viewContainer.isUserInteractionEnabled = true // 设置视图的可交互性
         
         tabBar.addSubview(viewContainer)
         viewContainer.tag = index
         
-        let tap = UITapGestureRecognizer(target: self, action: "tabBarClick:")
+        let tap = UITapGestureRecognizer(target: self, action: Selector(("tabBarClick:")))
         viewContainer.addGestureRecognizer(tap)
         
         return viewContainer
@@ -231,10 +233,11 @@ class AnimationTabBarController: UITabBarController {
         }
     }
     
-    
+    //选择时触发动画
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
-        setSelectIndex(from: selectedIndex, to: item.tag)
+         setSelectIndex(from: selectedIndex, to: item.tag)
+       
     }
     
     func selectItem(_ Index: Int) {
@@ -244,6 +247,7 @@ class AnimationTabBarController: UITabBarController {
         items[Index].selectedState(selectIcon, textLabel: iconsView[Index].textLabel)
     }
     
+    // h实现页面 传递参数给动画
     func setSelectIndex(from: Int,to: Int) {
         
         if to == 2 {

@@ -14,6 +14,7 @@ class MainTabBarController: AnimationTabBarController, UITabBarControllerDelegat
     
     fileprivate var fristLoadMainTabBarController: Bool = true
     fileprivate var adImageView: UIImageView?
+    //获取d启动页的图片，实现淡入淡出效果
     var adImage: UIImage? {
         didSet {
             weak var tmpSelf = self
@@ -39,10 +40,10 @@ class MainTabBarController: AnimationTabBarController, UITabBarControllerDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(animated)  //如果true，使用动画将视图添加到窗口中。
 
         if fristLoadMainTabBarController {
-            let containers = createViewContainers()
+            let containers = createViewContainers()  //建立视图容器
             
             createCustomIcons(containers)
             fristLoadMainTabBarController = false
@@ -59,19 +60,31 @@ class MainTabBarController: AnimationTabBarController, UITabBarControllerDelegat
     }
     
     fileprivate func tabBarControllerAddChildViewController(_ childView: UIViewController, title: String, imageName: String, selectedImageName: String, tag: Int) {
+        
         let vcItem = RAMAnimatedTabBarItem(title: title, image: UIImage(named: imageName), selectedImage: UIImage(named: selectedImageName))
-        vcItem.tag = tag
+        
+        vcItem.tag = tag  //UIBarItem--> var tag ==0 紫色是系统变量
+        
         vcItem.animation = RAMBounceAnimation()
         childView.tabBarItem = vcItem
+        
+//        childView.tabBarItem.tag = tag    //测试消除动画效果
+//        childView.tabBarItem.title = title
+//        childView.tabBarItem.image = UIImage(named: imageName)
+//        childView.tabBarItem.selectedImage = UIImage(named: selectedImageName)
+//
+        
         
         let navigationVC = BaseNavigationController(rootViewController:childView)
         addChildViewController(navigationVC)
     }
     
+    //UITabBarControllerDelegate ->代理方法
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let childArr = tabBarController.childViewControllers as NSArray
         let index = childArr.index(of: viewController)
         
+        //购物车页面拦截
         if index == 2 {
             return false
         }

@@ -53,7 +53,7 @@ class ADViewController: UIViewController {
                     })
                 } else {
                     //加载广告失败
-                    print("加载广告失败")
+                   
                     NotificationCenter.default.post(name: Notification.Name(rawValue: ADImageLoadFail), object: nil)
                 }
             }

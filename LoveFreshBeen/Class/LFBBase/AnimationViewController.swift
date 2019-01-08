@@ -50,7 +50,6 @@ class AnimationViewController: BaseViewController,CAAnimationDelegate {
         let transitionLayer = CALayer()
         transitionLayer.frame = frame
         transitionLayer.contents = imageView.layer.contents
-        //MARK: 这里被注销掉
         self.view.layer.addSublayer(transitionLayer)
         self.animationLayers?.append(transitionLayer)
         
@@ -76,9 +75,8 @@ class AnimationViewController: BaseViewController,CAAnimationDelegate {
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [positionAnimation, transformAnimation, opacityAnimation];
         groupAnimation.duration = 0.8
-        //MARK: -这里代理不起作用
-        groupAnimation.delegate = self as? CAAnimationDelegate;
-        //解决动画重复问题？
+        //groupAnimation.delegate = self as CAAnimationDelegate;
+        groupAnimation.delegate = self;
         
         transitionLayer.add(groupAnimation, forKey: "cartParabola")
       
@@ -121,7 +119,7 @@ class AnimationViewController: BaseViewController,CAAnimationDelegate {
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [positionAnimation, transformAnimation, opacityAnimation];
         groupAnimation.duration = 0.8
-//        groupAnimation.delegate = self;
+        groupAnimation.delegate = self;
         
         transitionLayer.add(groupAnimation, forKey: "BigShopCarAnimation")
     }

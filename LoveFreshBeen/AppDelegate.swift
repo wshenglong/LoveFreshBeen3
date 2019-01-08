@@ -1,4 +1,4 @@
-
+//*******************************
 ////////////////////////////////////////////////////////////////////
 //                          _ooOoo_                               //
 //                         o8888888o                              //
@@ -19,10 +19,11 @@
 //      ========`-.____`-.___\_____/___.-`____.-'========         //
 //                           `=---='                              //
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
-//         佛祖保佑            永无BUG              永不修改         //
+//         佛祖保佑            永无BUG              永不修改          //
+//****************************************************************//
 ////////////////////////////////////////////////////////////////////
 //  Created by 维尼的小熊 on 19/1/06.
-//  Copyright © 2016年 tianzhongtao. All rights reserved.
+//  Copyright © 2018年 tianzhongtao. All rights reserved.
 //  GitHub地址:https://github.com/wshenglong/LoveFreshBeen3
 
 
@@ -84,8 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addNotification() {
         NotificationCenter.default.addObserver(self, selector: "showMainTabbarControllerSucess:", name: NSNotification.Name(rawValue: ADImageLoadSecussed), object: nil)
-        NotificationCenter.default.addObserver(self, selector: "showMainTabbarControllerFale", name: NSNotification.Name(rawValue: ADImageLoadFail), object: nil)
-        NotificationCenter.default.addObserver(self, selector: "shoMainTabBarController", name: NSNotification.Name(rawValue: GuideViewControllerDidFinish), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.showMainTabbarControllerFale), name: NSNotification.Name(rawValue: ADImageLoadFail), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.shoMainTabBarController), name: NSNotification.Name(rawValue: GuideViewControllerDidFinish), object: nil)
     }
     
     func setUM() {

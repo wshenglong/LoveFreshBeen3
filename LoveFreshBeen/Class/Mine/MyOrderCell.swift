@@ -2,11 +2,10 @@
 //  MyOrderCell.swift
 //  LoveFreshBeen
 //
-//  Created by 维尼的小熊 on 16/1/12.
-//  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
+//  Created by jsonshenglong on 19/1/12.
+//  Copyright © 2018年 wshenglong. All rights reserved.
 //  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+// GitHub地址:https://github.com/wshenglong/LoveFreshBeen3
 
 import UIKit
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
@@ -104,7 +103,7 @@ class MyOrderCell: UITableViewCell {
         weak var tmpSelf = self
         buttons = OrderButtons(frame: CGRect.zero, buttonClickCallBack: { (type) -> () in
             if tmpSelf?.delegate != nil {
-                if tmpSelf!.delegate!.responds(to: "orderCellButtonDidClick:buttonType:") {
+                if tmpSelf!.delegate!.responds(to: #selector(MyOrderCellDelegate.orderCellButtonDidClick(_:buttonType:))) {
                     tmpSelf!.delegate!.orderCellButtonDidClick!(tmpSelf!.indexPath!, buttonType: type)
                 }
             }

@@ -32,7 +32,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class AnimationViewController: BaseViewController {
+class AnimationViewController: BaseViewController,CAAnimationDelegate {
     
     var animationLayers: [CALayer]?
     
@@ -51,7 +51,7 @@ class AnimationViewController: BaseViewController {
         transitionLayer.frame = frame
         transitionLayer.contents = imageView.layer.contents
         //MARK: 这里被注销掉
-        //self.view.layer.addSublayer(transitionLayer)
+        self.view.layer.addSublayer(transitionLayer)
         self.animationLayers?.append(transitionLayer)
         
         let p1 = transitionLayer.position;
@@ -77,7 +77,7 @@ class AnimationViewController: BaseViewController {
         groupAnimation.animations = [positionAnimation, transformAnimation, opacityAnimation];
         groupAnimation.duration = 0.8
         //MARK: -这里代理不起作用
-        //groupAnimation.delegate = self as? CAAnimationDelegate;
+        groupAnimation.delegate = self as? CAAnimationDelegate;
         //解决动画重复问题？
         
         transitionLayer.add(groupAnimation, forKey: "cartParabola")
@@ -125,8 +125,8 @@ class AnimationViewController: BaseViewController {
         
         transitionLayer.add(groupAnimation, forKey: "BigShopCarAnimation")
     }
-    
-    
+     //animationDidStop是CAAnimationDelegate里面的方法
+    // func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
 
         if self.animationLayers?.count > 0 {

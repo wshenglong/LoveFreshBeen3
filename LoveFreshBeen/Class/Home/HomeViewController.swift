@@ -4,7 +4,6 @@
 //
 //  Created by 维尼的小熊 on 16/1/12.
 //  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
 //  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
 //  泛型资料 https://www.bbsmax.com/A/kvJ3eqWAdg/
 
@@ -46,7 +45,7 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 
 class HomeViewController: SelectedAdressViewController {
-    fileprivate var flag: Int = -1
+    //fileprivate var flag: Int = -1  //test value
     fileprivate var headView: HomeTableHeadView?
     fileprivate var collectionView: LFBCollectionView!
     fileprivate var lastContentOffsetY: CGFloat = 0
@@ -70,8 +69,7 @@ class HomeViewController: SelectedAdressViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.navigationBar.barTintColor = LFBNavigationYellowColor
-        
+        navigationController?.navigationBar.barTintColor = LFBNavigationYellowColor //首页颜色LFBNavigationYellowColor
         if collectionView != nil {
             collectionView.reloadData()
         }
@@ -115,9 +113,11 @@ class HomeViewController: SelectedAdressViewController {
     
     fileprivate func buildCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 5 // 最小左右间距，默认是10
+        layout.minimumLineSpacing = 8  // 最小行间距，默认是0
+        // 区域内间距，默认是 UIEdgeInsetsMake(0, 0, 0, 0)
         layout.sectionInset = UIEdgeInsets(top: 0, left: HomeCollectionViewCellMargin, bottom: 0, right: HomeCollectionViewCellMargin)
+         //设置headerView的尺寸大小
         layout.headerReferenceSize = CGSize(width: 0, height: HomeCollectionViewCellMargin)
         
         collectionView = LFBCollectionView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - 64), collectionViewLayout: layout)
@@ -129,6 +129,7 @@ class HomeViewController: SelectedAdressViewController {
         collectionView.register(HomeCollectionFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerView")
         view.addSubview(collectionView)
         
+        //下拉刷新
         let refreshHeadView = LFBRefreshHeader(refreshingTarget: self, refreshingAction: "headRefresh")
         refreshHeadView?.gifView?.frame = CGRect(x: 0, y: 30, width: 100, height: 100)
         collectionView.mj_header = refreshHeadView
@@ -193,6 +194,7 @@ class HomeViewController: SelectedAdressViewController {
 
 // MARK:- HomeHeadViewDelegate TableHeadViewAction
 extension HomeViewController: HomeTableHeadViewDelegate {
+    //点击时候跳转
     func tableHeadView(_ headView: HomeTableHeadView, focusImageViewClick index: Int) {
         if headData?.data?.focus?.count > 0 {
             let path = Bundle.main.path(forResource: "FocusURL", ofType: "plist")

@@ -58,6 +58,7 @@ open class DictModelManager {
                         }
                         
                     } else {
+                        //需要修改 https://www.jianshu.com/p/32c0712f529f
                         let type = "\(value.classForCoder)"
                         
                         if type == "NSDictionary" || type == "Optional(NSDictionary)"{

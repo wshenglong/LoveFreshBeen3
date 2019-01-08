@@ -10,11 +10,12 @@
 
 import UIKit
 
+//MARK: - 设置顶部导航栏信息和事件 -->框架》？？
+
 class SelectedAdressViewController: AnimationViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         buildNavigationItem()
     }
     

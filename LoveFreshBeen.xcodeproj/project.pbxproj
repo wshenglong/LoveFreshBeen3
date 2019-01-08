@@ -520,6 +520,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A7F13FE21E34E720052A88C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF9AECD1C008BE000EDFC75 /* HotView.swift */,
+				B3C4E3991C0312340025074D /* HomeCell.swift */,
+				B3C4E31E1C02B4D60025074D /* IconImageTextView.swift */,
+				B3CAA3A51C0595F300CA1FE0 /* HomeCollectionFooterView.swift */,
+				B3B134BF1BFEF11B004C60AE /* HomeTableHeadView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		77FC2016DC7E5E33DA950B3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,14 +737,10 @@
 		B31252A61BFC7AC60098B995 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0A7F13FE21E34E720052A88C /* View */,
 				B3B134C11BFEF195004C60AE /* HomeViewController.swift */,
 				B388C66B1C57419B0047794B /* WebViewController.swift */,
 				B3A4AD221C5618CB005044F5 /* SelectedAdressViewController.swift */,
-				B3CAA3A51C0595F300CA1FE0 /* HomeCollectionFooterView.swift */,
-				B3B134BF1BFEF11B004C60AE /* HomeTableHeadView.swift */,
-				FAF9AECD1C008BE000EDFC75 /* HotView.swift */,
-				B3C4E31E1C02B4D60025074D /* IconImageTextView.swift */,
-				B3C4E3991C0312340025074D /* HomeCell.swift */,
 				B3BA40371C4DE98C0060D6A0 /* ProductDetailViewController.swift */,
 				FAF9AECF1C0092A500EDFC75 /* Model */,
 			);

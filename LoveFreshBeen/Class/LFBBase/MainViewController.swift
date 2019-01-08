@@ -6,7 +6,7 @@
 //  Copyright © 2016年 tianzhongtao. All rights reserved.
 //  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
 //  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+//  swift改版到3.0 https://www.jianshu.com/p/32c0712f529f
 
 import UIKit
 
@@ -49,6 +49,18 @@ class MainTabBarController: AnimationTabBarController, UITabBarControllerDelegat
             fristLoadMainTabBarController = false
         }
     }
+
+    
+    
+        //MARK: - 初始化tabbar
+    
+//    最后MainTabBarController继承AnimationTabBarController
+//    
+//    调用createViewContainers也就是父类中的方法
+//    
+//    并且给tabBarController添加视图控制器
+    
+
     
 // MARK: - Method
     // MARK: 初始化tabbar
@@ -92,4 +104,5 @@ class MainTabBarController: AnimationTabBarController, UITabBarControllerDelegat
         return true
     }
 }
+
 

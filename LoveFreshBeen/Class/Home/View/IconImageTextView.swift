@@ -34,7 +34,7 @@ class IconImageTextView: UIView {
         textLabel = UILabel()
         textLabel!.textAlignment = NSTextAlignment.center
         textLabel!.font = UIFont.systemFont(ofSize: 12)
-        textLabel!.textColor = UIColor.black
+        textLabel!.textColor = UIColor.blue  //文字和图标 m默认为黑色
         textLabel?.isUserInteractionEnabled = false
         addSubview(textLabel!)
     }

@@ -4,9 +4,7 @@
 //
 //  Created by 维尼的小熊 on 16/1/12.
 //  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
-//  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+//MARK: - animationDidStop()方法未实现
 
 import UIKit
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
@@ -52,7 +50,8 @@ class AnimationViewController: BaseViewController {
         let transitionLayer = CALayer()
         transitionLayer.frame = frame
         transitionLayer.contents = imageView.layer.contents
-        self.view.layer.addSublayer(transitionLayer)
+        //MARK: 这里被注销掉
+        //self.view.layer.addSublayer(transitionLayer)
         self.animationLayers?.append(transitionLayer)
         
         let p1 = transitionLayer.position;
@@ -77,9 +76,12 @@ class AnimationViewController: BaseViewController {
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [positionAnimation, transformAnimation, opacityAnimation];
         groupAnimation.duration = 0.8
-//        groupAnimation.delegate = self;
+        //MARK: -这里代理不起作用
+        //groupAnimation.delegate = self as? CAAnimationDelegate;
+        //解决动画重复问题？
         
         transitionLayer.add(groupAnimation, forKey: "cartParabola")
+      
     }
     
 
@@ -88,10 +90,7 @@ class AnimationViewController: BaseViewController {
         if animationBigLayers == nil {
             animationBigLayers = [CALayer]()
         }
-        
-
-
-        
+  
         let frame = imageView.convert(imageView.bounds, to: view)
         let transitionLayer = CALayer()
         transitionLayer.frame = frame

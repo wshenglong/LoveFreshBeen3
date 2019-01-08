@@ -2,4 +2,210 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/LFBBase/AnimationTabBarController.swift"
+            timestampString = "568631553.718047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "createViewContainer(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+            timestampString = "568631553.718127"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "AnimationViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+            timestampString = "568631553.7187949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "addProductsAnimation(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/Home/HomeViewController.swift"
+            timestampString = "568631553.719381"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/Home/HomeViewController.swift"
+            timestampString = "568631553.719455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+            timestampString = "568631553.7195179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "AnimationViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+            timestampString = "568631553.720027"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "AnimationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveFreshBeen.AnimationViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LoveFreshBeen.AnimationViewController"
+                  moduleName = "LoveFreshBeen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsonshenglong/Library/Mobile%20Documents/com~apple~CloudDocs/fresh_project/LoveFreshBeen_m/LoveFreshBeen3/LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+                  timestampString = "568631202.875325"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveFreshBeen.AnimationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LoveFreshBeen.AnimationViewController"
+                  moduleName = "LoveFreshBeen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsonshenglong/Library/Mobile%20Documents/com~apple~CloudDocs/fresh_project/LoveFreshBeen_m/LoveFreshBeen3/LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+                  timestampString = "568631202.877607"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveFreshBeen.AnimationViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LoveFreshBeen.AnimationViewController&gt;"
+                  moduleName = "LoveFreshBeen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsonshenglong/Library/Mobile%20Documents/com~apple~CloudDocs/fresh_project/LoveFreshBeen_m/LoveFreshBeen3/LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+                  timestampString = "568631202.879746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveFreshBeen.AnimationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LoveFreshBeen.AnimationViewController&gt;"
+                  moduleName = "LoveFreshBeen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsonshenglong/Library/Mobile%20Documents/com~apple~CloudDocs/fresh_project/LoveFreshBeen_m/LoveFreshBeen3/LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+                  timestampString = "568631202.8818181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveFreshBeen.AnimationViewController.__ivar_destroyer"
+                  moduleName = "LoveFreshBeen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsonshenglong/Library/Mobile%20Documents/com~apple~CloudDocs/fresh_project/LoveFreshBeen_m/LoveFreshBeen3/LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+                  timestampString = "568631202.88383"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveFreshBeen.AnimationViewController.__deallocating_deinit"
+                  moduleName = "LoveFreshBeen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsonshenglong/Library/Mobile%20Documents/com~apple~CloudDocs/fresh_project/LoveFreshBeen_m/LoveFreshBeen3/LoveFreshBeen/Class/LFBBase/AnimationViewController.swift"
+                  timestampString = "568631202.885807"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

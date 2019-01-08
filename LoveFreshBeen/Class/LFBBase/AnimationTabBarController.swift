@@ -3,13 +3,13 @@
 //
 //  Created by 维尼的小熊 on 16/1/12.
 //  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
-//  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+//  框架介绍:https://www.jianshu.com/p/e5649029ea5f
+// 资料2 https://www.jianshu.com/p/58e1ca0389db
+// CAKeyframeAnimation参数 https://www.jianshu.com/p/1d735e981f55
 
 import UIKit
 
-
+//3.继承自RAMItemAnimation的类,主要实现父类中的协议方法,具体设置textLabel和UIImageView的动画周期和效果
 class RAMBounceAnimation : RAMItemAnimation {
     
     override func playAnimation(_ icon : UIImageView, textLabel : UILabel) {
@@ -39,7 +39,7 @@ class RAMBounceAnimation : RAMItemAnimation {
     }
     
     func playBounceAnimation(_ icon : UIImageView) {
-        //动画
+        //动画 transform.scale 所有方向缩放
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
         bounceAnimation.duration = TimeInterval(duration)
@@ -56,7 +56,7 @@ class RAMBounceAnimation : RAMItemAnimation {
     
 }
 
-
+//4.自定义UITabBarItem,声明UITabBarItem中的func deselectAnimation(icon: UIImageView, textLabel: UILabel)和    func selectedState(icon:UIImageView, textLabel:UILabel)  方法,以便在自定义UITabBarController中使用,其中animation是继承的RAMItemAnimation,可以调用父类中的方法,也就是父类中提前已经声明好的几个动画函数
 class RAMAnimatedTabBarItem: UITabBarItem {
     
     var animation: RAMItemAnimation?
@@ -82,6 +82,7 @@ class RAMAnimatedTabBarItem: UITabBarItem {
     }
 }
 
+//1.这是声明了一个选择TabBarItem时动画的协议
 protocol RAMItemAnimationProtocol {
     
     func playAnimation(_ icon : UIImageView, textLabel : UILabel)
@@ -89,6 +90,8 @@ protocol RAMItemAnimationProtocol {
     func selectedState(_ icon : UIImageView, textLabel : UILabel)
 }
 
+
+//2.遵守动画协议创建的动画类,主要是设置动画周期,item中选择的颜色
 class RAMItemAnimation: NSObject, RAMItemAnimationProtocol {
     
     var duration : CGFloat = 0.6
@@ -126,6 +129,7 @@ class AnimationTabBarController: UITabBarController {
     }
     
     func searchViewControllerDeinit() {
+        //搜索页面析构时判断购物车红点状态
         if shopCarIcon != nil {
             let redDotView = ShopCarRedDotView.sharedRedDotView
             redDotView.frame = CGRect(x: 21 + 1, y: -3, width: 15, height: 15)
@@ -133,14 +137,16 @@ class AnimationTabBarController: UITabBarController {
         }
     }
     
+    //创建承载TabBarItem的视图容器,里面是item中的titleLabel和UIImageView,将视图容器存入字典,以便在后续使用中可以分清是点了哪一个item
     func createViewContainers() -> [String: UIView] {
         var containersDict = [String: UIView]()
-        
+        //tabbar的item是继承的自定义的RAMAnimatedTabBarItem,其中包含了动画设置的函数
         guard let customItems = tabBar.items as? [RAMAnimatedTabBarItem] else
         {
             return containersDict
         }
-        print(customItems)
+        
+        //根据item的个数创建视图容器,将视图容器放在字典中
         for index in 0..<customItems.count {
             let viewContainer = createViewContainer(index)
             containersDict["container\(index)"] = viewContainer
@@ -149,8 +155,11 @@ class AnimationTabBarController: UITabBarController {
         return containersDict
     }
     
+    //根据index值创建每个的视图容器
     func createViewContainer(_ index: Int) -> UIView {
         // 建立容器视图位置
+        
+        /// 底部tabBar的高度
         let viewWidth: CGFloat = ScreenWidth / CGFloat(tabBar.items!.count)
         let viewHeight: CGFloat = tabBar.bounds.size.height
         
@@ -162,13 +171,14 @@ class AnimationTabBarController: UITabBarController {
         tabBar.addSubview(viewContainer)
         viewContainer.tag = index
         
+        //给容器添加手势,其实是自己重写了系统的item的功能,因为我们要在里面加入动画
         let tap = UITapGestureRecognizer(target: self, action: Selector(("tabBarClick:")))
         viewContainer.addGestureRecognizer(tap)
         
         return viewContainer
     }
     
-    
+    //创建items的具体内容
     func createCustomIcons(_ containers : [String: UIView]) {
         if let items = tabBar.items {
             
@@ -234,12 +244,14 @@ class AnimationTabBarController: UITabBarController {
     }
     
     //选择时触发动画
+    //重写父类的didSelectItem
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
          setSelectIndex(from: selectedIndex, to: item.tag)
        
     }
     
+    //选择item时item中内容的变化
     func selectItem(_ Index: Int) {
         let items = tabBar.items as! [RAMAnimatedTabBarItem]
         let selectIcon = iconsView[Index].icon
@@ -248,6 +260,7 @@ class AnimationTabBarController: UITabBarController {
     }
     
     // h实现页面 传递参数给动画
+    //根据选择的index值设置item中的内容并且执行动画父类中的方法
     func setSelectIndex(from: Int,to: Int) {
         
         if to == 2 {

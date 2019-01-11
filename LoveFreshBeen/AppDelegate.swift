@@ -22,8 +22,8 @@
 //         佛祖保佑            永无BUG              永不修改          //
 //****************************************************************//
 ////////////////////////////////////////////////////////////////////
-//  Created by 维尼的小熊 on 19/1/06.
-//  Copyright © 2018年 tianzhongtao. All rights reserved.
+//  Created by wshenglong on 19/1/06.
+//  Copyright © 2018年 wshenglong. All rights reserved.
 //  GitHub地址:https://github.com/wshenglong/LoveFreshBeen3
 
 
